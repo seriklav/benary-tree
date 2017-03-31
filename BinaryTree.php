@@ -41,12 +41,22 @@ class BinaryTree
         $queue = new SplQueue();
         $queue->enqueue($node);
         $queue->enqueue($node);
-
+$dephNode = $node->depthNode;
 // В цикле перебираем массив и выполняем действия согласно алгоритму
         for ($i=1; $i<count($array); $i++)
         {
             $t = $queue->dequeue();
             $node = new BinaryNode($array[$i],$i);
+
+            if($dephNode <= 2^($t->depthNode-1)){
+                $dephNode++;
+                $node->depthNode = $t->depthNode+1;
+            }else{
+                $dephNode++;
+                $node->depthNode = $t->depthNode+1;
+            }
+
+
             if($t->left == null){
                 $t->left = $node;
                 $t->left->parentId = $t->id;
