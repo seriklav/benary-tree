@@ -57,7 +57,7 @@ class BinaryNode
 //        debug($this->id);
         $node_id =  "<div class='node_id'>Node id: {$this->id}.</div>";
         $parent_id = "<div class='parent_id'>Parent id: {$this->parentId}.</div>";
-        echo "<div class='node $this->nameNode'>{$parent_id}     {$node_id}</div>";
+        echo "<div class='node $this->nameNode' data-depth='$this->depthNode'>{$parent_id}     {$node_id}</div>";
         if ($this->left !== null) {
             $this->left->dump();
         }
