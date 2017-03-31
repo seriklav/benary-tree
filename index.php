@@ -58,12 +58,13 @@ $tree = new BinaryTree();
 $treeShow = $tree->buildTree(2);
 
 
-$tree->traverse();
+
 
 ?>
 
-
-
+<div class="node-wrapper">
+<?php $tree->traverse(); ?>
+</div>
 
 
 

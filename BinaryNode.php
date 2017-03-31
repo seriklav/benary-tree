@@ -56,11 +56,11 @@ class BinaryNode
             $this->left->dump();
         }
 //        debug($this->id);
-        $node_id =  "<div class='$this->nameNode'>Node id: {$this->id}.</div>";
-        $parent_id = "<div class='$this->nameNode'>Parent id: {$this->parentId}.</div>";
+        $node_id =  "<div class='node_id'>Node id: {$this->id}.</div>";
+        $parent_id = "<div class='parent_id'>Parent id: {$this->parentId}.</div>";
 
 
-        echo "<div class='node '>{$parent_id}     {$node_id}</div>";
+        echo "<div class='$this->nameNode '>{$parent_id}     {$node_id}</div>";
         if ($this->right !== null) {
             $this->right->dump();
         }

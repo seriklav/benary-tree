@@ -1,8 +1,3 @@
-.node {
-    width: 80px;
-    height: 50px;
-
-}
 .node_id {
     width: 80px;
     height: 25px;
@@ -12,4 +7,22 @@
     width: 80px;
     height: 25px;
     background: royalblue;
+}
+.node-wrapper{
+    width: 1000px;
+    margin:0 auto;
+}
+.node-wrapper .node{
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+}
+.node-wrapper .node.leftChild{
+    float: left;
+    width: 80px;
+}
+.node-wrapper .node.rightChild{
+    float: right;
+    width: 80px;
 }
