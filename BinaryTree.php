@@ -49,10 +49,14 @@ class BinaryTree
             $node = new BinaryNode($array[$i],$i);
             if($t->left == null){
                 $t->left = $node;
-                $t->left->parentId = $t->id;}
+                $t->left->parentId = $t->id;
+                $t->left->nameNode = 'leftChild';
+            }
             else{
                 $t->right = $node;
-                $t->right->parentId = $t->id;}
+                $t->right->parentId = $t->id;
+                $t->right->nameNode = 'rightChild';
+            }
 
             $queue->enqueue($node);
             $queue->enqueue($node);

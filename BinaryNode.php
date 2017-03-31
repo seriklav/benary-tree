@@ -26,6 +26,7 @@ class BinaryNode
         echo "<div class='node '>{$parent_id}     {$node_id}</div>";
     }*/
     public $value;    // значение узла
+    public $nameNode;    // значение узла
     public $id;    // id узла
     public $parentId; // id родительского узла
     public $left;     // левый потомок типа BinaryNode
@@ -55,8 +56,8 @@ class BinaryNode
             $this->left->dump();
         }
 //        debug($this->id);
-        $node_id =  "<div class='node_id'>Node id: {$this->id}.</div>";
-        $parent_id = "<div class='parent_id'>Parent id: {$this->parentId}.</div>";
+        $node_id =  "<div class='$this->nameNode'>Node id: {$this->id}.</div>";
+        $parent_id = "<div class='$this->nameNode'>Parent id: {$this->parentId}.</div>";
 
 
         echo "<div class='node '>{$parent_id}     {$node_id}</div>";
