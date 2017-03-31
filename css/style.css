@@ -1,0 +1,15 @@
+.node {
+    width: 80px;
+    height: 50px;
+
+}
+.node_id {
+    width: 80px;
+    height: 25px;
+    background: yellow;
+}
+.parent_id {
+    width: 80px;
+    height: 25px;
+    background: royalblue;
+}
