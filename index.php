@@ -55,7 +55,7 @@ for ($i=1; $i<count($array); $i++)
 
 $tree = new BinaryTree();
 
-$treeShow = $tree->buildTree(2);
+$treeShow = $tree->buildTree(3);
 
 
 

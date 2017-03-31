@@ -52,15 +52,13 @@ class BinaryNode
     }
     // сделаем симметричный проход текущего узла
     public function dump() {
-        if ($this->left !== null) {
-            $this->left->dump();
-        }
 //        debug($this->id);
         $node_id =  "<div class='node_id'>Node id: {$this->id}.</div>";
         $parent_id = "<div class='parent_id'>Parent id: {$this->parentId}.</div>";
-
-
-        echo "<div class='$this->nameNode '>{$parent_id}     {$node_id}</div>";
+        echo "<div class='node $this->nameNode'>{$parent_id}     {$node_id}</div>";
+        if ($this->left !== null) {
+            $this->left->dump();
+        }
         if ($this->right !== null) {
             $this->right->dump();
         }
