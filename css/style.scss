@@ -1,0 +1,29 @@
+.node_id {
+    width: 80px;
+    height: 25px;
+    background: yellow;
+}
+.parent_id {
+    width: 80px;
+    height: 25px;
+    background: royalblue;
+}
+.node-wrapper{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align:center
+
+}
+
+.node-wrapper .node{
+    width: 80px;
+    height: 50px;
+}
+.node-wrapper .node.leftChild{
+    width: 80px;
+}
+.node-wrapper .node.rightChild{
+    width: 80px;
+}

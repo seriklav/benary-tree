@@ -33,7 +33,7 @@ class BinaryNode
     public $left;     // левый потомок типа BinaryNode
     public $right;     // правый потомок типа BinaryNode
 
-    public function __construct($item,$id = 0,$parentId = 1,$depthNode = 1) {
+    public function __construct($item,$id = 0,$parentId = 0,$depthNode = 1) {
         $this->id = $id+1;
         $this->depthNode = $depthNode;
         $this->parentId = $parentId;
@@ -55,14 +55,22 @@ class BinaryNode
     // сделаем симметричный проход текущего узла
     public function dump() {
 //        debug($this->id);
+
+
+
         $node_id =  "<div class='node_id'>Node id: {$this->id}.</div>";
         $parent_id = "<div class='parent_id'>Parent id: {$this->parentId}.</div>";
-        echo "<div class='node $this->nameNode' data-depth='$this->depthNode'>{$parent_id}     {$node_id}</div>";
+
+
+    echo "<div class='node $this->nameNode node-depth' data-depth='$this->depthNode'>{$parent_id}     {$node_id}</div>";
+
         if ($this->left !== null) {
             $this->left->dump();
+
         }
         if ($this->right !== null) {
             $this->right->dump();
+
         }
     }
 
