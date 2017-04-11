@@ -27,3 +27,53 @@
 .node-wrapper .node.rightChild{
     width: 80px;
 }
+.node{
+    position:relative;
+    width: 200px;
+    height: 80px;
+
+}
+.node__root{
+    position:relative;
+}
+
+.node__left{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+.node__right{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+.node__right:before{
+    content:'\02936';
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+    transform:rotate(-90deg);
+}
+.node__left:before{
+    content:'\02937';
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+    transform:rotate(90deg);
+}

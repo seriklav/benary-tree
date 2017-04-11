@@ -60,12 +60,15 @@ $dephNode = $node->depthNode;
             if($t->left == null){
                 $t->left = $node;
                 $t->left->parentId = $t->id;
-                $t->left->nameNode = 'leftChild';
+                if($this->depthTree != $t->depthNode+1){$t->left->nameNode = 'leftChild';}
+                else{$t->left->nameNode = 'list';}
             }
             else{
                 $t->right = $node;
                 $t->right->parentId = $t->id;
-                $t->right->nameNode = 'rightChild';
+//                $t->right->nameNode = 'rightChild';
+                if($this->depthTree != $t->depthNode+1){$t->right->nameNode = 'rightChild';}
+                else{$t->right->nameNode = 'list';}
             }
 
             $queue->enqueue($node);

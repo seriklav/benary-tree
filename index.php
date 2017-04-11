@@ -31,12 +31,8 @@ $treeShow = $tree->buildTree(2);
 
 ?>
 
-<div class="node-wrapper">
+
 <?php $tree->traverse(); ?>
-</div>
-
-
-
 
 
 </body>

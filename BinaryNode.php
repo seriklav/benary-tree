@@ -33,11 +33,12 @@ class BinaryNode
     public $left;     // левый потомок типа BinaryNode
     public $right;     // правый потомок типа BinaryNode
 
-    public function __construct($item,$id = 0,$parentId = 0,$depthNode = 1) {
+    public function __construct($item,$id = 0,$parentId = 0,$depthNode = 1,$nameNode = "root") {
         $this->id = $id+1;
         $this->depthNode = $depthNode;
         $this->parentId = $parentId;
         $this->value = $item;
+        $this->nameNode = $nameNode;
         // новые потомки - вершина
         $this->left = null;
         $this->right = null;
@@ -57,12 +58,12 @@ class BinaryNode
 //        debug($this->id);
 
 
-
-        $node_id =  "<div class='node_id'>Node id: {$this->id}.</div>";
+        $child_left = "<div class='node__left'></div>";
         $parent_id = "<div class='parent_id'>Parent id: {$this->parentId}.</div>";
+        $node_id =  "<div class='node_id'>Node id: {$this->id}.</div>";
+        $child_right = "<div class='node__right'></div>";
 
-
-    echo "<div class='node $this->nameNode node-depth' data-depth='$this->depthNode'>{$parent_id}     {$node_id}</div>";
+        echo "<div class='node node__{$this->nameNode} data-depth='{$this->depthNode}'>{$child_left}{$parent_id}     {$node_id}{$child_right}</div>";
 
         if ($this->left !== null) {
             $this->left->dump();
