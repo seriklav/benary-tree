@@ -23,7 +23,7 @@ function debug($obj)
 
 $tree = new BinaryTree();
 
-$treeShow = $tree->buildTree(2);
+$treeShow = $tree->buildTree(3);
 
 
 //debug($tree);

@@ -54,23 +54,29 @@ class BinaryNode
         echo "<div class='node '>{$parent_id}     {$node_id}</div>";
     }
     // сделаем симметричный проход текущего узла
-    public function dump() {
-//        debug($this->id);
+    public function dump($check = 0) {
 
-
-        $child_left = "<div class='node__left'></div>";
         $parent_id = "<div class='parent_id'>Parent id: {$this->parentId}.</div>";
         $node_id =  "<div class='node_id'>Node id: {$this->id}.</div>";
+
+        $child_left = "<div class='node__left'></div>";
+        $child_center = "<div class='node__center'>{$parent_id}     {$node_id}</div>";
         $child_right = "<div class='node__right'></div>";
 
-        echo "<div class='node node__{$this->nameNode} data-depth='{$this->depthNode}'>{$child_left}{$parent_id}     {$node_id}{$child_right}</div>";
+if($check != $this->parentId) {
+    $node = "<div class='node node__{$this->nameNode} data-depth={$this->depthNode}'>{$child_left}{$child_center}{$child_right}</div>";
+}else{
+    $node = "<div class='node  node__{$this->nameNode} data-depth={$this->depthNode}'>{$child_left}{$child_center}{$child_right}</div><div class='next'><hr></div>";
+    $check = $this->parentId;
+}
 
+       echo $node;
         if ($this->left !== null) {
-            $this->left->dump();
+            $this->left->dump($check);
 
         }
         if ($this->right !== null) {
-            $this->right->dump();
+            $this->right->dump($check);
 
         }
     }
