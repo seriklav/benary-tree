@@ -1,6 +1,15 @@
 body {
   text-align: center; }
 
+.node__root {
+  display: inline; }
+
+.node {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 80px; }
+
 .node_id {
   width: 80px;
   height: 25px;
@@ -27,11 +36,6 @@ body {
 
 .node-wrapper .node.rightChild {
   width: 80px; }
-
-.node {
-  position: relative;
-  width: 200px;
-  height: 80px; }
 
 .node__root {
   position: relative; }
