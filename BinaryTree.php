@@ -61,14 +61,14 @@ $dephNode = $node->depthNode;
                 $t->left = $node;
                 $t->left->parentId = $t->id;
                 if($this->depthTree != $t->depthNode+1){$t->left->nameNode = 'leftChild';}
-                else{$t->left->nameNode = 'list';}
+                else{$t->left->nameNode = 'left_list';}
             }
             else{
                 $t->right = $node;
                 $t->right->parentId = $t->id;
 //                $t->right->nameNode = 'rightChild';
                 if($this->depthTree != $t->depthNode+1){$t->right->nameNode = 'rightChild';}
-                else{$t->right->nameNode = 'list';}
+                else{$t->right->nameNode = 'right_list';}
             }
 
             $queue->enqueue($node);
@@ -81,6 +81,48 @@ $dephNode = $node->depthNode;
     public function traverse() {
         // отображение дерева в возрастающем порядке от корня
         $this->root->dump();
+    }
+
+    public function showTree($node){
+        if($node->nameNode == "leftChild" || $node->nameNode == "left_list")
+            echo "<ul class='left_child' data-pid='".$node->parentId ."'>";
+        elseif($node->nameNode == "rightChild" || $node->nameNode == "right_list")
+            echo "<ul class='right_child' data-pid='".$node->parentId ."'>";
+        elseif($node->parentId == 0) {
+            echo "<ul class='root' data-pid='" . $node->parentId . "'>";
+        }
+            echo "<li>";
+                    echo "<div class='block'> ";
+
+                        if($node->nameNode != "left_list" || $node->nameNode != "right_list")
+                            echo "<div class='node__left'></div>";
+
+
+
+
+                         echo "<span class='parent_id'>" . $node->parentId . "</span>
+                            <span class='node_id'>Node id: " . $node->id . " : " . $node->depthNode ." </span>";
+
+
+
+
+
+                        if($node->nameNode != "right_list" || $node->nameNode != "left_list")
+                            echo "<div class='node__right'></div>";
+
+
+
+                     echo "</div>";
+
+                    if($node->left->nameNode == "leftChild" || $node->left->nameNode == "left_list"){
+                        $this->showTree($node->left);
+                    }
+                    if($node->right->nameNode == "rightChild" || $node->right->nameNode == "right_list"){
+                        $this->showTree($node->right);
+                    }
+            echo "</li>";
+        echo "</ul>";
+
     }
 
 }

@@ -1,6 +1,24 @@
 body{
     text-align: center;
 }
+
+
+body{
+    text-align: center;
+}
+
+
+.left_child, .left_list{
+    float: left;
+}
+.right_child, .right_list{
+    float: right;
+}
+
+ul li {
+    list-style: none;
+}
+
 .node__root{
     display: inline;
 }

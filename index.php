@@ -16,23 +16,24 @@ function debug($obj)
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
 </head>
 <body>
-<h1>Бинарное дерево!</h1>
+
 <?php
 
 $tree = new BinaryTree();
+$tree->buildTree(4);
+$node = $tree->root;
+$tree->showTree($node);
 
-$treeShow = $tree->buildTree(3);
-
-
-//debug($tree);
 
 
 ?>
 
 
-<?php $tree->traverse(); ?>
+<?php  ?>
+<?php //$tree->traverse(); ?>
 
 
 </body>
