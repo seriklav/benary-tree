@@ -49,8 +49,8 @@ class BinaryNode
 
     public function showNode()
     {
-        $parent_id = "<div class='parent_id'>P_id: {$this->parentId}</div>";
-        $node_id = "<div class='node_id'>id:deep ({$this->id}:{$this->depthNode})</div>";
+        $parent_id = "<div class='parent_id'>Parent: {$this->parentId}</div>";
+        $node_id = "<div class='node_id'>id:deep({$this->id}:{$this->depthNode})</div>";
 
         $pointer_left = "<div class='pointer__left'></div>";
         $info_block_center = "<div class='info_block__center'>{$parent_id}     {$node_id}</div>";
