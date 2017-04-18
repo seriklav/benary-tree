@@ -23,18 +23,9 @@ function debug($obj)
 <?php
 
 $tree = new BinaryTree();
-$tree->buildTree(4);
+$tree->buildTree(5);
 $node = $tree->root;
-$tree->showTree($node);
-
-
-
+$tree->showHtmlTree($node);
 ?>
-
-
-<?php  ?>
-<?php //$tree->traverse(); ?>
-
-
 </body>
 </html>

@@ -49,26 +49,22 @@ class BinaryNode
 
     public function showNode()
     {
-        $parent_id = "<div class='parent_id'>Parent id: {$this->parentId}</div>";
-        $node_id = "<div class='node_id'>Node id: {$this->id}:{$this->depthNode}</div>";
+        $parent_id = "<div class='parent_id'>P_id: {$this->parentId}</div>";
+        $node_id = "<div class='node_id'>id:deep ({$this->id}:{$this->depthNode})</div>";
 
-        $child_left = "<div class='node__left'></div>";
-        $child_center = "<div class='node__center'>{$parent_id}     {$node_id}</div>";
-        $child_right = "<div class='node__right'></div>";
+        $pointer_left = "<div class='pointer__left'></div>";
+        $info_block_center = "<div class='info_block__center'>{$parent_id}     {$node_id}</div>";
+        $pointer_right = "<div class='pointer__right'></div>";
 
+//        $node = "<div class='node node__{$this->nameNode} data-depth={$this->depthNode}'>{$pointer_left}{$info_block_center}{$pointer_right}</div>";
 
-
-        if($this->nameNode == "right_list" || $this->nameNode == "left_list" )
-            $node = "<div class='node node__{$this->nameNode} data-depth={$this->depthNode}'>{$child_left}{$child_center}{$child_right}</div>";
-
-        elseif($this->nameNode == "rightChild" || $this->nameNode == "leftChild")
-            $node = "<div class=main_nodes__right><div class='node node__{$this->nameNode}'>{$child_left}{$child_center}{$child_right}</div>";
-
-        else{
-            if($this->nameNode == "ROOT" )
-            $node = "<div class='node node__{$this->nameNode} data-depth={$this->depthNode}'>{$child_left}{$child_center}{$child_right}</div>";}
-
+        if($this->nameNode != "ROOT" )
+            $node = "<div class='node node__{$this->nameNode} data-depth={$this->depthNode}'>{$pointer_left}{$info_block_center}{$pointer_right}</div>";
+        else {
+            $node = "<div class='node node__{$this->nameNode} data-depth={$this->depthNode}'>{$pointer_left}{$info_block_center}{$pointer_right}</div>";
+        }
         echo $node;
+
     }
 
 
