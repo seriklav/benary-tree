@@ -23,6 +23,13 @@ include"BinaryTree.php";
 <?php
 if (isset($_POST['deep_tree'])) {
     $deep = $_POST['deep_tree'];
+    if($deep>10) {
+        echo "<div class='warning'>Глубина дерева длжна быть не больше 10-ти Уровней</div><br />";
+        $deep = 3;
+    }
+    elseif($deep<1){
+        echo "<div class='warning'>Глубина дерева длжна быть не мене 1-го Уровня</div><br />";
+    $deep = 3;}
 }else{
     $deep = 3;
 }
