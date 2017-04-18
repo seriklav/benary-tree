@@ -1,11 +1,11 @@
 <?php
-spl_autoload_register();
-function debug($obj)
-{
-    echo '<pre>';
-    print_r($obj);
-    echo '</pre>';
-}
+    spl_autoload_register();
+    function debug($obj)
+    {
+        echo '<pre>';
+        print_r($obj);
+        echo '</pre>';
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -19,13 +19,26 @@ function debug($obj)
     <script src="js/script.js"></script>
 </head>
 <body>
-
 <?php
-
-$tree = new BinaryTree();
-$tree->buildTree(5);
-$node = $tree->root;
-$tree->showHtmlTree($node);
+if (isset($_POST['deep_tree'])) {
+    $deep = $_POST['deep_tree'];
+}else{
+    $deep = 3;
+}
 ?>
+
+<div class="form_deep">
+        <form action="index.php" name="form_deep" method="post">
+            <input type="number" name="deep_tree" value="<?= $deep ?>">
+            <input type="submit" value="Установить глубину">
+        </form>
+    </div>
+
+    <?php
+        $tree = new BinaryTree();
+        $tree->buildTree($deep);
+        $node = $tree->root;
+        $tree->showHtmlTree($node);
+    ?>
 </body>
 </html>

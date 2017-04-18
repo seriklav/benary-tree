@@ -1,14 +1,17 @@
 body {
-  text-align: center; }
+  text-align: center;
+  width: inherit; }
 
-body {
-  text-align: center; }
+.form_deep {
+  position: absolute;
+  top: 50px;
+  left: 20px; }
 
 .leftChild, .left_child, .left_list {
-  float: left; }
+  display: inline-block; }
 
 .rightChild, .right_child, .right_list {
-  float: right; }
+  display: inline-block; }
 
 ul li {
   list-style: none; }
