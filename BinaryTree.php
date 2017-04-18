@@ -1,6 +1,6 @@
 <?php
 
-include"BinaryNode.php";
+include "BinaryNode.php";
 //  https://www.youtube.com/watch?v=kVLYZz-R6H0
 //  https://toster.ru/q/157537
 //  N узлов -> N-1 указателей(стрелок, ребер)
@@ -15,7 +15,6 @@ include"BinaryNode.php";
 //    public $depth;      //  Глубина узла - длина пути от корня до узла(количество ребер)
 //    public $height;     //  Высота узла - количество ребер в самом длинном пути от узла до листового узла
 //  Максимальное количество узлов 2 ^ $height -1
-
 
 
 class BinaryTree
@@ -92,18 +91,19 @@ class BinaryTree
         if ($node->parentId == 0) {
             echo "<ul class='root'>";
             echo $node->showNode();
-        }else{
+        } else {
             echo "<ul class='$node->nameNode'>";
             echo $node->showNode();
         }
         echo "<li>";
 
-
-        if ($node->left->nameNode == "leftChild" || $node->left->nameNode == "left_list") {
-            $this->showHtmlTree($node->left);
-        }
-        if ($node->right->nameNode == "rightChild" || $node->right->nameNode == "right_list") {
-            $this->showHtmlTree($node->right);
+        if (isset($node->left->nameNode) || isset($node->right->nameNode)) {
+            if ($node->left->nameNode == "leftChild" || $node->left->nameNode == "left_list") {
+                $this->showHtmlTree($node->left);
+            }
+            if ($node->right->nameNode == "rightChild" || $node->right->nameNode == "right_list") {
+                $this->showHtmlTree($node->right);
+            }
         }
         echo "</li>";
         echo "</ul>";

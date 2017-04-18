@@ -6,11 +6,19 @@ body{
     text-align: center;
     width: inherit;
 }
+ul{
+  margin: 0;
+}
 .form_deep{
   position: absolute;
-  top: 50px;
+  top: 20px;
   left: 20px;
 }
+.node__right_list .pointer__left,
+.node__right_list .pointer__right,
+.node__left_list .pointer__left,
+.node__left_list .pointer__right {
+ display: none; }
 
 .leftChild, .left_child, .left_list{
     //float: left;
