@@ -37,8 +37,8 @@ if (isset($_POST['deep_tree'])) {
 
 <div class="form_deep">
         <form action="index.php" name="form_deep" method="post">
-            <input type="number" name="deep_tree" value="<?= $deep ?>">
-            <input type="submit" value="Установить глубину">
+            <input type="number" name="deep_tree" min="1" max="10" value="<?= $deep ?>" required autofocus >
+            <input type="submit" onsubmit="return checkForm()" value="Установить глубину">
         </form>
     </div>
 

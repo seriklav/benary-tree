@@ -51,6 +51,14 @@ class BinaryNode
     {
         $parent_id = "<div class='parent_id'>Parent: {$this->parentId}</div>";
         $node_id = "<div class='node_id'>id:deep({$this->id}:{$this->depthNode})</div>";
+        $desrc = "<div class='descr'><h4>Node Tree</h4>
+                                      <hr>
+                                     <p>    Id: {$this->id}</p>   
+                                     <p>  Name: {$this->nameNode}</p>   
+                                     <p>Parent: {$this->parentId}</p>   
+                                     <p> Value: {$this->value}</p>   
+                                     <p>  Deep: {$this->depthNode}</p>   
+                  </div>";
 
         $pointer_left = "<div class='pointer__left'></div>";
         $info_block_center = "<div class='info_block__center'>{$parent_id}     {$node_id}</div>";
@@ -59,9 +67,9 @@ class BinaryNode
 //        $node = "<div class='node node__{$this->nameNode} data-depth={$this->depthNode}'>{$pointer_left}{$info_block_center}{$pointer_right}</div>";
 
         if($this->nameNode != "ROOT" )
-            $node = "<div class='node node__{$this->nameNode} data-depth={$this->depthNode}'>{$pointer_left}{$info_block_center}{$pointer_right}</div>";
+            $node = "<div class='node node__{$this->nameNode} data-depth={$this->depthNode}'>{$pointer_left}{$info_block_center}{$pointer_right}{$desrc}</div>";
         else {
-            $node = "<div class='node node__{$this->nameNode} data-depth={$this->depthNode}'>{$pointer_left}{$info_block_center}{$pointer_right}</div>";
+            $node = "<div class='node node__{$this->nameNode} data-depth={$this->depthNode}'>{$pointer_left}{$info_block_center}{$pointer_right}{$desrc}</div>";
         }
         echo $node;
 
