@@ -1,5 +1,7 @@
 <?php
-    spl_autoload_register();
+//    spl_autoload_register();
+include"BinaryTree.php";
+//include_once "BinaryNode.php.php";
     function debug($obj)
     {
         echo '<pre>';

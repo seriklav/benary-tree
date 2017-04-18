@@ -1,6 +1,6 @@
 <?php
 
-
+include"BinaryNode.php";
 //  https://www.youtube.com/watch?v=kVLYZz-R6H0
 //  https://toster.ru/q/157537
 //  N узлов -> N-1 указателей(стрелок, ребер)
