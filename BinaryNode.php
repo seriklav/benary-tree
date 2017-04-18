@@ -58,11 +58,9 @@ class BinaryNode
 
 //        $node = "<div class='node node__{$this->nameNode} data-depth={$this->depthNode}'>{$pointer_left}{$info_block_center}{$pointer_right}</div>";
 
-        if($this->nameNode != "ROOT" && ($this->nameNode != "left_list" && $this->nameNode != "right_list" ))
+        if($this->nameNode != "ROOT" )
             $node = "<div class='node node__{$this->nameNode} data-depth={$this->depthNode}'>{$pointer_left}{$info_block_center}{$pointer_right}</div>";
-        elseif ($this->nameNode != "left_list" && $this->nameNode != "right_list" ) {
-            $node = "<div class='node node__{$this->nameNode} data-depth={$this->depthNode}'>{$pointer_left}{$info_block_center}{$pointer_right}</div>";
-        }else{
+        else {
             $node = "<div class='node node__{$this->nameNode} data-depth={$this->depthNode}'>{$pointer_left}{$info_block_center}{$pointer_right}</div>";
         }
         echo $node;

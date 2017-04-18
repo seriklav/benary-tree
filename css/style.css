@@ -1,24 +1,11 @@
-* {
-  margin: 0;
-  padding: 0; }
-
 body {
   text-align: center;
   width: inherit; }
 
-ul {
-  margin: 0; }
-
 .form_deep {
   position: absolute;
-  top: 20px;
+  top: 50px;
   left: 20px; }
-
-.node__right_list .pointer__left,
-.node__right_list .pointer__right,
-.node__left_list .pointer__left,
-.node__left_list .pointer__right {
-  display: none; }
 
 .leftChild, .left_child, .left_list {
   display: inline-block; }
