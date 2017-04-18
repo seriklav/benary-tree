@@ -4,7 +4,10 @@
 
 body {
   text-align: center;
-  width: inherit; }
+  overflow: hidden;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  white-space: nowrap; }
 
 ul {
   margin: 0; }
@@ -29,14 +32,17 @@ ul {
 ul li {
   list-style: none; }
 
+.root {
+  display: inline-block; }
+
 .node__root {
-  display: inline; }
+  display: inline;
+  position: relative; }
 
 .node {
   display: inline-block;
   position: relative;
-  width: 200px;
-  height: 80px; }
+  width: 200px; }
 
 .node_id {
   width: 80px;
@@ -48,9 +54,6 @@ ul li {
   width: 80px;
   height: 25px;
   background: royalblue; }
-
-.node__root {
-  position: relative; }
 
 .pointer__left {
   position: absolute;
